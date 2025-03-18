@@ -53,4 +53,4 @@ jobs:
           script: |
             cd ~/web/tz-website
             npm install --omit=dev
-            pm2 restart tz-website || pm2 start npm --name tz-website -- start
+            pm2 restart tz-website || pm2 start npm --name "tz-website" -- start
