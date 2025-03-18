@@ -31,8 +31,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            mkdir -p ~/web/ts-website
-            cd ~/web/ts-website
+            mkdir -p ~/web/tz-website
+            cd ~/web/tz-website
 
       - name: Deploy files to server
         uses: appleboy/scp-action@v0.1.4
@@ -41,7 +41,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: '.next/,public/,package.json,package-lock.json,next.config.js'
-          target: '~/web/ts-website'
+          target: '~/web/tz-website'
           strip_components: 0
 
       - name: Restart application
@@ -51,6 +51,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd ~/web/ts-website
+            cd ~/web/tz-website
             npm install --production
             pm2 restart tz-website || pm2 start npm --name tz-website -- start
