@@ -40,7 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# log
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# # log
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

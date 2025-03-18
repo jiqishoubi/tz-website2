@@ -18,7 +18,8 @@ jobs:
           # cache: 'npm' # 不添加 cache 参数，加了就校验lock文件
 
       - name: Install dependencies
-        run: npm i --force
+        run: npm ci # 使用npm ci安装依赖，不会修改package-lock.json文件
+        # run: npm i --force
 
       - name: Build application
         run: npm run build
