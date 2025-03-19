@@ -7,12 +7,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true, // 为了让 GitHub Pages 正常显示
-  ...(process.env.NODE_ENV === 'production'
-    ? {
-        basePath: '/tz-website2',
-        assetPrefix: '/tz-website2/',
-      }
-    : {}),
+  basePath: '/tz-website2',
+  assetPrefix: '/tz-website2/',
 }
 
 export default nextConfig
