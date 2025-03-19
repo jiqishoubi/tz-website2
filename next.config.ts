@@ -3,11 +3,16 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
-  basePath: process.env.NODE_ENV === 'production' ? '/tz-website2' : '',
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
+  trailingSlash: true, // 为了让 GitHub Pages 正常显示
+  ...(process.env.NODE_ENV === 'production'
+    ? {
+        basePath: '/tz-website2',
+        assetPrefix: '/tz-website2/',
+      }
+    : {}),
 }
 
 export default nextConfig
