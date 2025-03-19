@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true, // 为了让 GitHub Pages 正常显示
   ...(process.env.NODE_ENV === 'production'
     ? {
         basePath: '/tz-website2',
