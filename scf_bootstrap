@@ -1,4 +1,0 @@
-#!/bin/bash
-/var/lang/node18/bin/node
-import next from 'next'
-next start -p 3001
