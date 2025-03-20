@@ -4,6 +4,7 @@ import { primaryColor } from '@/utils/consts'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import React from 'react'
+import Logo from '../Logo'
 
 const linkList = [
   { href: '/', label: 'Home' },
@@ -11,23 +12,6 @@ const linkList = [
   { href: '/stack', label: 'Stack' },
   { href: '/about', label: 'About' },
 ]
-
-function Logo() {
-  const router = useRouter()
-  return (
-    <div
-      className="inline-flex justify-center items-center font-bold text-[17px] cursor-pointer"
-      onClick={() => {
-        router.push('/')
-      }}
-    >
-      <span>Tong</span>
-      <span className="inline-flex items-center justify-center w-[45px] h-[45px] text-white rounded-[7px] ml-[5px]" style={{ backgroundColor: primaryColor }}>
-        Zhou
-      </span>
-    </div>
-  )
-}
 
 const Index: React.FC = () => {
   const pathname = usePathname()
