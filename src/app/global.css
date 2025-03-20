@@ -1,1 +1,32 @@
 @import 'tailwindcss';
+
+/* xs <768px 的情况 */
+html {
+  font-size: 13px;
+}
+
+body {
+  font-size: 16px;
+}
+
+/* 
+  xs	<768px	超小屏 如：手机
+  sm	≥768px	小屏幕 如：平板
+  md	≥992px	中等屏幕 如：桌面显示器
+  lg	≥1200px	大屏幕 如：大桌面显示器
+  xl	≥1920px	2k屏等
+ */
+
+/* sm */
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* md */
+@media (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+}
