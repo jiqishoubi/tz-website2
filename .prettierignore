@@ -1,0 +1,11 @@
+/.husky
+/node_modules
+/dist
+/.next
+/out
+/.github
+
+*_bak.*
+
+*.min.js
+*.min.css

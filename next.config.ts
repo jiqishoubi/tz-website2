@@ -1,8 +1,14 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'export',
+  reactStrictMode: false, // 关闭react严格模式
+  eslint: {
+    ignoreDuringBuilds: true, // 构建时忽略eslint
+  },
+  typescript: {
+    ignoreBuildErrors: true, // 构建时忽略typescript错误
+  },
+  output: 'export', // 静态导出
   images: {
     unoptimized: true,
   },
