@@ -13,10 +13,16 @@ const linkList = [
 ]
 
 function Logo() {
+  const router = useRouter()
   return (
-    <div className="inline-flex justify-center items-center font-bold text-[17px] cursor-pointer">
+    <div
+      className="inline-flex justify-center items-center font-bold text-[17px] cursor-pointer"
+      onClick={() => {
+        router.push('/')
+      }}
+    >
       <span>Tong</span>
-      <span className="inline-flex items-center justify-center w-[44px] h-[44px] text-white rounded-[7px] ml-[7px]" style={{ backgroundColor: primaryColor }}>
+      <span className="inline-flex items-center justify-center w-[45px] h-[45px] text-white rounded-[7px] ml-[5px]" style={{ backgroundColor: primaryColor }}>
         Zhou
       </span>
     </div>
