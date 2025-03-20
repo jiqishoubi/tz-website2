@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './global.css'
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 
 export const metadata: Metadata = {
   title: 'Tong Zhou | Site',
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+      </body>
     </html>
   )
 }
