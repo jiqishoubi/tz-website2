@@ -9,9 +9,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true, // 构建时忽略typescript错误
   },
-  output: 'export', // 静态导出
+  output: 'export', // 静态导出 为了部署到 github pages
   images: {
-    unoptimized: true,
+    unoptimized: true, // 处理github pages图片不显示问题
   },
   // ...(process.env.NODE_ENV === 'production'
   //   ? {
@@ -19,7 +19,8 @@ const nextConfig: NextConfig = {
   //       assetPrefix: '/tz-website2/',
   //     }
   //   : {}),
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'], // 增加md和mdx
+  // sassOptions: {},
 }
 
 const withMDX = createMDX({
