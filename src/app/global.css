@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography"; /* @tailwindcss/typography 新的引入方式 */
 
 /* xs <768px 的情况 */
 html {

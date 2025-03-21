@@ -21,6 +21,7 @@
     "@mui/material-nextjs": "^6.4.3",
     "@next/mdx": "^15.2.3",
     "@tailwindcss/postcss": "^4.0.14",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/mdx": "^2.0.13",
     "dayjs": "^1.11.13",
     "next": "15.2.3",

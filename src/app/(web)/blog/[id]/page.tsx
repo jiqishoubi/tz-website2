@@ -8,7 +8,11 @@ export function generateStaticParams() {
 const Index: React.FC = () => {
   return (
     <>
-      <Article />
+      <article className="prose">
+        <Article />
+      </article>
+
+      <div>这里是评论区</div>
     </>
   )
 }
