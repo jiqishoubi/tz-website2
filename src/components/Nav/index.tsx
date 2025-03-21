@@ -8,16 +8,24 @@ import Logo from '../Logo'
 import Drawer from '@mui/material/Drawer'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
 
-const linkList = [
+const navList = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
   { href: '/stack', label: 'Stack' },
   { href: '/about', label: 'About' },
 ]
 
+function getActive(pathname: string, href: string) {
+  if (href === '/') {
+    return pathname === '/'
+  } else {
+    return pathname.startsWith(href)
+  }
+}
+
 const Index: React.FC = () => {
   const pathname = usePathname()
-  // console.log(`🚀 ~ pathname`, pathname)
+  console.log(`🚀 ~ pathname`, pathname)
   const [open, setOpen] = useState(false)
   return (
     <nav className="flex justify-between items-center p-4">
@@ -26,16 +34,19 @@ const Index: React.FC = () => {
       </div>
       <div className="flex-1 flex justify-center">
         <div className="hidden md:flex">
-          {linkList.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[17px] mx-[17px]"
-              style={pathname === link.href ? { color: primaryColor, textDecoration: 'underline', textUnderlineOffset: '6px' } : {}}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navList.map((nav, i) => {
+            const active = getActive(pathname, nav.href)
+            return (
+              <Link
+                key={i}
+                href={nav.href}
+                className="text-[17px] mx-[17px]"
+                style={active ? { color: primaryColor, textDecoration: 'underline', textUnderlineOffset: '6px' } : {}}
+              >
+                {nav.label}
+              </Link>
+            )
+          })}
         </div>
       </div>
       <div className="w-[100px]"></div>
@@ -48,21 +59,24 @@ const Index: React.FC = () => {
             <div className="mb-7">
               <Logo />
             </div>
-            {linkList.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block text-[17px] mx-[17px] my-4"
-                style={pathname === link.href ? { color: primaryColor, textDecoration: 'underline', textUnderlineOffset: '6px' } : {}}
-                onClick={() => {
-                  setTimeout(() => {
-                    setOpen(false)
-                  }, 200)
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navList.map((nav, i) => {
+              const active = getActive(pathname, nav.href)
+              return (
+                <Link
+                  key={i}
+                  href={nav.href}
+                  className="block text-[17px] mx-[17px] my-4"
+                  style={active ? { color: primaryColor, textDecoration: 'underline', textUnderlineOffset: '6px' } : {}}
+                  onClick={() => {
+                    setTimeout(() => {
+                      setOpen(false)
+                    }, 200)
+                  }}
+                >
+                  {nav.label}
+                </Link>
+              )
+            })}
           </div>
         </Drawer>
       </div>

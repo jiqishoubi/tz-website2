@@ -8,8 +8,6 @@ const Index: React.FC = () => {
         Frontend engineer specializing in React, TypeScript, and modern web development. Passionate about building scalable, high-performance applications with clean and
         maintainable code.
       </p>
-
-      <div style={{ height: '800px' }}></div>
     </section>
   )
 }
