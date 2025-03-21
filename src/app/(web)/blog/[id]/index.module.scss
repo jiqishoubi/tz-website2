@@ -1,3 +1,13 @@
+/* 
+  用这个方法也可以避免markdown的样式被重置
+  恢复默认样式或设置特定样式
+  */
+/* @layer base {
+  .markdown-content * {
+    all: revert;
+  }
+} */
+
 .red {
   color: red;
 }
