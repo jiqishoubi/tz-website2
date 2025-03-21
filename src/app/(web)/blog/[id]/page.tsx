@@ -1,16 +1,26 @@
 import React from 'react'
-import Article from '@/articles/hello world.mdx'
 import styles from './index.module.scss'
 
 export function generateStaticParams() {
-  return [{ id: '123' }, { id: '456' }, { id: '789' }] // 这里提前声明所有可能的动态 ID
+  return [{ id: '20241119' }]
 }
 
-const Index: React.FC = () => {
+const Index: React.FC<{
+  params: Promise<{ id: string }>
+}> = async (props) => {
+  // console.log(`🚀 ~ props`, props)
+  const { id } = await props.params
+  console.log(`🚀 ~ id`, id)
+  // 获取../../../../articles/${id}/下的md
+  const { default: content } = await import(`../../../../articles/${id}/index.md`)
+  console.log(`🚀 ~ content`, content)
+  const Component = content
   return (
     <>
       <article className="prose">
-        <Article />
+        <div style={{ overflow: 'hidden' }}>
+          <Component />
+        </div>
       </article>
 
       <div className={styles.red}>这里是评论区</div>
