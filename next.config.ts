@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import createMDX from '@next/mdx'
 
 const nextConfig: NextConfig = {
   reactStrictMode: false, // 关闭react严格模式
@@ -18,6 +19,12 @@ const nextConfig: NextConfig = {
   //       assetPrefix: '/tz-website2/',
   //     }
   //   : {}),
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 }
 
-export default nextConfig
+const withMDX = createMDX({
+  // Add markdown plugins here, as desired
+  extension: /\.(md|mdx)$/, // nextjs 默认mdx，md支持要加上
+})
+
+export default withMDX(nextConfig)

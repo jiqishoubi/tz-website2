@@ -10,7 +10,7 @@ import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined'
 
 const linkList = [
   { href: '/', label: 'Home' },
-  { href: '/archive', label: 'Archive' },
+  { href: '/blog', label: 'Blog' },
   { href: '/stack', label: 'Stack' },
   { href: '/about', label: 'About' },
 ]
