@@ -25,7 +25,7 @@ function getActive(pathname: string, href: string) {
 
 const Index: React.FC = () => {
   const pathname = usePathname()
-  console.log(`🚀 ~ pathname`, pathname)
+  // console.log(`🚀 ~ pathname`, pathname)
   const [open, setOpen] = useState(false)
   return (
     <nav className="flex justify-between items-center p-4">
